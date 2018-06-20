@@ -158,7 +158,7 @@ function initialize() {
       subLayer.infowindow.set('template', $('#infowindow_template').html());
 	 }
 	 )*/;
-  startVisible('Depressed Mood (State)');
+  startVisible('Depressed mood (State)');
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

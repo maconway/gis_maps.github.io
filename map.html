@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+    html { height: 100% }
+    body { height: 100%; margin: 0; padding: 0 }
+    #map-canvas { height: 100% }
+    </style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="mapviewer.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="worldmapprint.css" type="text/css" media="print" />
+    <link media="all and (max-width: 680px)" rel="stylesheet" type="text/css" href="http://www.onlinecitymaps.com/mapcss/mobile.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
+    <![endif]-->
+
+  </head>
+
+  <body>
+  
+
+
+
+
+
+
+  <div id="map_canvas" ></div>
+  <div id="layers">
+    <div id="accordion">
+      <h3><strong>State Layers</strong></h3>
+      <div>
+        <table>
+        </table>
+          <br>
+          <p>Data values are based on standardized z-scores.</p>
+      
+      </div>
+        <h3><strong>County Layers</strong></h3>
+      <div>
+        <table>
+        </table>
+          <br>
+          <p>Data values are based on standardized z-scores.</p>
+      
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDRj3S_nk2WIVqQATfqV85DpVBnKI5k5NQ&sensor=false&libraries=weather,panoramio,drawing,places,adsense"></script>
+  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+  <script type="text/javascript" src="map.js"></script>
+  <script type="text/javascript" src="layersLoader.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    $( "#landmarksKey" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "false",
+        duration: 1000
+      },
+      hide: {
+        effect: "false",
+        duration: 1000
+      }
+    });
+ 
+    $( "#opener2" ).click(function() {
+      $( "#landmarksKey" ).dialog( "open" );
+    });
+  });
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      $("#accordion").accordion();
+      $(".ui-accordion-content").css('height', 'auto');
+      $( "#dialog" ).dialog({
+        autoOpen: true,
+        show: {
+          effect: "blank",
+          duration: 1000
+        },
+        hide: {
+          effect: "fade",
+          duration: 1000
+        }
+      }).show();
+
+      $( "#dialog2" ).dialog({
+        autoOpen: false,
+        show: {
+          effect: "fold",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
+
+    $( "#opener" ).click(function() {
+        $( "#dialog2" ).dialog( "open" );
+        });
+    });
+	
+	 
+	function closeSelf() {
+		$( "#dialog" ).dialog('close');
+		return false;
+		};
+	
+
+
+
+  </script>
+
+  </body>
+</html>
